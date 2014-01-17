@@ -8,7 +8,13 @@ A playground for creating Docker containers
 
 # Installation
 
-It's rather simple, clone and install Vagrant.
+It's rather simple, clone and install Vagrant; or at least it was simple.
+
+Vagrant 1.5 will support an rsync shared folder plugin, which currently doesn't
+exist in the latest 1.4 release, I have however backported it. You can copy the
+the plugin from the
+[Vagrant](https://github.com/mitchellh/vagrant/tree/master/plugins/synced_folders/rsync)
+repo. You will have to alter the `plugin.rb`.
 
 
 # Usage
