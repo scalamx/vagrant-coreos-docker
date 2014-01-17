@@ -1,0 +1,7 @@
+# Filesystem
+.DS_Store
+*.swp
+
+# Vagrant
+.vagrant/*
+
