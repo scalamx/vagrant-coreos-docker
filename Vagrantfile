@@ -14,7 +14,7 @@ Vagrant.configure('2') do |config|
     override.vm.box_url = 'http://storage.core-os.net/coreos/amd64-generic/dev-channel/coreos_production_vagrant.box'
   end
 
-  config.vm.synced_folder ".", "/vagrant", type: "nfs"
+  config.vm.synced_folder ".", "/home/core/vagrant", type: 'rsync'
 
   config.ssh.username = 'core'
 end
