@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cat > /media/state/units/docker.service <<End-of-Message
+[Unit]
+Description=Docker Application Container Engine
+Documentation=http://docs.docker.io
+After=network.target
+
+[Service]
+ExecStartPre=/bin/mount --make-rprivate /
+# Run docker but don't have docker automatically restart
+# containers. This is a job for systemd and unit files.
+ExecStart=/usr/bin/docker -d -r=false -H fd:// -H 0.0.0.0:4243
+
+[Install]
+WantedBy=multi-user.target
+End-of-Message
+
+systemctl link --runtime /media/state/units/docker.service
+systemctl start docker.service
