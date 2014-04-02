@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cat > /media/state/units/tlsdated.service <<End-of-Message
+[Unit]
+Description=Time sync
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/tlsdated -m 30
+Type=simple
+End-of-Message
+
+systemctl link --runtime /media/state/units/tlsdated.service
+systemctl start tlsdated.service

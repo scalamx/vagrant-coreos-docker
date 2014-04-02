@@ -17,5 +17,6 @@ Vagrant.configure('2') do |config|
 
   config.ssh.username = 'core'
 
+  config.vm.provision :shell, :path => 'scripts/tlsdated.service'
   config.vm.provision :shell, :path => 'scripts/docker.service'
 end
