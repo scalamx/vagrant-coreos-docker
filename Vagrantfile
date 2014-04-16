@@ -6,7 +6,7 @@ Vagrant.configure('2') do |config|
 
   config.vm.provider :vmware_fusion do |vmware, override|
     override.vm.box_url = 'http://storage.core-os.net/coreos/amd64-generic/dev-channel/coreos_production_vagrant_vmware_fusion.box'
-    vmware.vmx['memsize'] = '1024'
+    vmware.vmx['memsize'] = '2048'
   end
 
   config.vm.provider :virtualbox do |virtualbox, override|
